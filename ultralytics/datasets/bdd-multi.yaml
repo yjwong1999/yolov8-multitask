@@ -1,0 +1,42 @@
+# The id represent the correspondence relation
+# ├─dataset root
+# │ ├─images
+# │ │ ├─train
+# │ │ ├─val
+# │ │ ├─test
+# │ ├─detection-car-colour
+# │ │ ├─labels
+# │ │ │ ├─train
+# │ │ │ ├─val
+# │ │ │ ├─test
+# │ ├─detection-license-plate
+# │ │ ├─labels
+# │ │ │ ├─train
+# │ │ │ ├─val
+# │ │ │ ├─test
+
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: /home/tham/Desktop/carData  # dataset root dir
+
+# Train/val/test image paths for all tasks
+train: ../images/train  # train images for object detection (relative to 'path')
+val: ../images/val  # val images for object detection (relative to 'path')
+test: ../images/test  # test images for object detection (relative to 'path') (optional)
+
+labels_list:
+  - detection-car-colour
+  - detection-license-plate
+
+tnc: 6  # number of classes
+nc_list: [5, 1]
+map: [None, None]
+
+# Classes for all tasks
+names:
+  0: black
+  1: blue
+  2: white
+  3: red
+  4: silver
+  5: licensePlate
